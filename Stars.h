@@ -47,14 +47,15 @@ using namespace std;
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
 #pragma comment(lib, "dinput9.lib")
-#pragma comment(lib, "Strmiids.lib")
+#pragma comment(lib, "strmiids.lib")
 #pragma comment(lib, "dsound.lib")
 
-
-/*#pragma comment(lib, "ddraw.lib")
+/*
+#pragma comment(lib, "ddraw.lib")
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "dinput.lib")
-#pragma comment(lib, "dsound.lib")*/
+#pragma comment(lib, "dsound.lib")
+*/
 
 	struct vvertex {
 				D3DVECTOR position;

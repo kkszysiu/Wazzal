@@ -301,7 +301,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 return TRUE; // prevent Windows from setting cursor to window class cursor
             }
             break;*/
-		/*case WM_CHAR:	//näppäimistön luku nimen ottoa varten		
+		/*case WM_CHAR:	//n\E4pp\E4imist\F6n luku nimen ottoa varten		
 			{
 				if(pelivaihe==7)
 				if(pelivaihe2==0)
@@ -361,7 +361,7 @@ void init(void)
 	}
 
 	
-	//randomgeneraattori(en löytäny käskyä)	
+	//randomgeneraattori(en l\F6yt\E4ny k\E4sky\E4)	
 	for (q=0; q<(int)GetTickCount()/100; q++){		
 		rand();
 	}
@@ -518,17 +518,17 @@ void init(void)
 								   );*/
 		
 
-	//keskitä hiiri
+	//keskit\E4 hiiri
 	mousex=(float)(SCREEN_WIDTH/2);
 	mousey=(float)(SCREEN_HEIGHT/2);
 	
 	DDCOLORKEY color;	
-	color.dwColorSpaceHighValue=0x000000;//CLR_INVALID on ylänurkka
+	color.dwColorSpaceHighValue=0x000000;//CLR_INVALID on yl\E4nurkka
 	color.dwColorSpaceLowValue=0x000000;
 
 	//tausta[15]->SetColorKey(DDCKEY_SRCBLT,&color);
 
-	//ladataan objektit //muista lisätä mallit[n]
+	//ladataan objektit //muista lis\E4t\E4 mallit[n]
 	mallit[0].malli= new obj[objnum0];	
 	mallit[1].malli= new obj[objnum1];
 	mallit[2].malli= new obj[objnum2];/*
@@ -553,9 +553,9 @@ void init(void)
 	lataa("models/ukko5.3dw",	mallit[10].malli,	false,	false);*/
 
 /*
-	moveparts(3);//siirtää ukko0 osat paikalleen
-	moveparts(4);//siirtää ukko1 osat paikalleen
-	moveparts(5);//siirtää ukko1 osat paikalleen
+	moveparts(3);//siirt\E4\E4 ukko0 osat paikalleen
+	moveparts(4);//siirt\E4\E4 ukko1 osat paikalleen
+	moveparts(5);//siirt\E4\E4 ukko1 osat paikalleen
 */
 
 	SetWindowLong( hWnd, GWL_STYLE, WS_MAXIMIZE|WS_VISIBLE|WS_POPUP );
@@ -1135,7 +1135,7 @@ BOOL lataa(char nimi[200],obj *kohde,BOOL mirror,BOOL miekkakala)
 		fgets(rivi,sizeof(rivi),fil);
 		groupz=(float)atof(rivi);
 		
-//tässä välissä lataillaan miekan kärki
+//t\E4ss\E4 v\E4liss\E4 lataillaan miekan k\E4rki
 /*
 		if (miekkakala)
 			{
@@ -1356,7 +1356,7 @@ BOOL lataatext()
 	for (q=0; q<materiaa; q++)
 		filter[q]=false;
 /*
-	//yleisöä ei suodateta
+	//yleis\F6\E4 ei suodateta
 	filter[49]=true;
 	filter[50]=true;
 */
@@ -1660,7 +1660,7 @@ void luekeyb(void)
 				if(dialog_choice>=dialog.options)dialog_choice=0;
 				playsound(0,1,0,0,0,0);
 			}
-			//ylös
+			//yl\F6s
 			if (!KEYDOWN(buffer,  DIK_UP )&&KEYDOWN(buffer2,  DIK_UP)){
 				if(dialog.noup){dialog.noup=false;break;}
 				dialog_choice=dialog_choice-1;
@@ -2008,7 +2008,7 @@ void luekeyb(void)
 					selected_mission=selected_mission+1;
 					if(selected_mission>=missions)selected_mission=0;
 				}
-				//ylös
+				//yl\F6s
 				if (!KEYDOWN(buffer,  DIK_UP )&&KEYDOWN(buffer2,  DIK_UP)){
 					//if(dialog.noup){dialog.noup=false;break;}
 					playsound(0,1,0,0,0,0);
@@ -2061,7 +2061,7 @@ void laskesavut(void)//laskee savut
 		if(savu[a].pois)continue;
 		savu[a].aika=savu[a].aika-elapsed*pelinopeus;
 
-		//jos savu on liian pieni, häviää se
+		//jos savu on liian pieni, h\E4vi\E4\E4 se
 		savu[a].koko=savu[a].koko+savu[a].suurenee*elapsed*pelinopeus;
 		//savu ei saa olla liian iso
 		if(savu[a].koko>20)savu[a].koko=20;
@@ -2085,10 +2085,10 @@ void laskesavut(void)//laskee savut
 	}
 }
 
-void savusta(float transparency, float koko, float suurenee,bool rotate,float savukesto,float x,float y,float z,int tyyppi,float q,float w,float e,float vx,float vy,float vz)//tekee savun ja räjähykset
+void savusta(float transparency, float koko, float suurenee,bool rotate,float savukesto,float x,float y,float z,int tyyppi,float q,float w,float e,float vx,float vy,float vz)//tekee savun ja r\E4j\E4hykset
 {
 	int a,b;	
-		//päätetään minkä luodin paikalle tulee uusi
+		//p\E4\E4tet\E4\E4n mink\E4 luodin paikalle tulee uusi
 			a=0;
 			b=0;
 					alku1:
@@ -2130,8 +2130,8 @@ void valota(float x,float y,float z)
 {
 
 	int q;
-	for (q=0; q<maksimivaloja; q++) if(lamppu[q].on==false) break;//etsitään vapaa lamppu
-		if(q>=maksimivaloja)q=randInt(0,maksimivaloja);//jos vapaata ei löydy
+	for (q=0; q<maksimivaloja; q++) if(lamppu[q].on==false) break;//etsit\E4\E4n vapaa lamppu
+		if(q>=maksimivaloja)q=randInt(0,maksimivaloja);//jos vapaata ei l\F6ydy
 
 		
 	//if(valoja>=maksimivaloja)poistavalo(randInt(0,valoja),&valoja);
@@ -2286,8 +2286,8 @@ bool Render(void)
 					kirjota(1,-1,-1,-1,120,374,50,"Fuel: The number in the bottom right corner represents your fuel amount. When you run out of fuel, you cannot steer your ship. You may buy more fuel from the planets. If you run out of fuel and money, you have to wait for a ship to come along, then capture or destroy it to get more fuel. Remember that fuel is only spent when you press the up or down keys, so try to minimize the usage of these keys to preserve fuel.");
 				}
 				if(pelivaihe2==1){						
-					kirjota(1,-1,-1,-1,120,190,50,"This is the battle mode. Your fleet attempts to destroy the enemy ships before they destroy you. You control one of your ships while the computer controls the others. The number under each ship represents its health. If the ship´s health runs low enough, it has a chance of being disabled.");
-					kirjota(1,-1,-1,-1,120,282,50,"The battle ends when one side´s ships have been either destroyed or disabled.");
+					kirjota(1,-1,-1,-1,120,190,50,"This is the battle mode. Your fleet attempts to destroy the enemy ships before they destroy you. You control one of your ships while the computer controls the others. The number under each ship represents its health. If the ship\B4s health runs low enough, it has a chance of being disabled.");
+					kirjota(1,-1,-1,-1,120,282,50,"The battle ends when one side\B4s ships have been either destroyed or disabled.");
 					kirjota(1,-1,-1,-1,120,316,50,"Controls: Fire ships weapons (default:1, 2). You can change the ship you control (if you have more than one ship) by pressing the switch ship key (default:3).");
 					kirjota(1,-1,-1,-1,120,388,50,"Radar: The lower right greenish square is your radar. Your ships are marked with a green arrow and the enemies are represented by red arrows.");
 					kirjota(1,-1,-1,-1,120,442,50,"Heat: The number above your radar is your heat meter. It increases when you fire your weapons, and decreases over time. If the meter reaches 100, your ship overheats and you cannot fire until all the heat has dissipated.");
@@ -2307,13 +2307,13 @@ bool Render(void)
 				kirjota(1,-1,-1,-1,120,190,50,"There is no help for this screen.");
 				break;
 			case 5:
-				kirjota(1,-1,-1,-1,120,190,50,"This is the map mode. It shows the planets rotating around the sun. Your ship is also marked on the map. This information helps you navigate through the solar system (That´s what maps are for, right?).");
+				kirjota(1,-1,-1,-1,120,190,50,"This is the map mode. It shows the planets rotating around the sun. Your ship is also marked on the map. This information helps you navigate through the solar system (That\B4s what maps are for, right?).");
 				break;
 			case 6:
-				kirjota(1,-1,-1,-1,120,190,50,"This is the mission log. To the left you can see your currently active missions. You can select one by pressing the up and down keys. On the right you can see detailed information about the selected mission. This is useful if you don´t know where to find the moon you are supposed to go to.");
+				kirjota(1,-1,-1,-1,120,190,50,"This is the mission log. To the left you can see your currently active missions. You can select one by pressing the up and down keys. On the right you can see detailed information about the selected mission. This is useful if you don\B4t know where to find the moon you are supposed to go to.");
 				break;
 			case 7:
-				kirjota(1,-1,-1,-1,120,190,50,"This is the menu. If you haven´t already started a game, you can start a new game here. You can save your current game only if you come to the menu from the solar system mode by pressing escape.");
+				kirjota(1,-1,-1,-1,120,190,50,"This is the menu. If you haven\B4t already started a game, you can start a new game here. You can save your current game only if you come to the menu from the solar system mode by pressing escape.");
 				if(pelivaihe2==3){//options
 					kirjota(1,-1,-1,-1,120,264,50,"Options:");
 					kirjota(1,-1,-1,-1,140,264+1*20,50,"Nebula visible: If the background nebula and galaxies are visible.");
@@ -2323,7 +2323,7 @@ bool Render(void)
 					kirjota(1,-1,-1,-1,140,264+5*20,50,"Easy Mode: You can ease the game if you find it difficult.");
 					kirjota(1,-1,-1,-1,140,264+6*20,50,"Sound: If the sound effects should be played or not.");
 					kirjota(1,-1,-1,-1,140,264+7*20,50,"Music: If the soundtrack should be played or not.");
-					kirjota(1,-1,-1,-1,140,264+8*20,50,"Change Keys: Change the ship´s controls.");
+					kirjota(1,-1,-1,-1,140,264+8*20,50,"Change Keys: Change the ship\B4s controls.");
 					kirjota(1,-1,-1,-1,140,264+9*20,50,"Particles visible: If the particles from explosions should be visible.");
 					
 				}
@@ -2356,9 +2356,9 @@ bool Render(void)
 
 	if(screenshot_timer>0){
 		screenshot_timer=screenshot_timer-elapsed*pelinopeus;
-		strcpy(temprivi,"Screenshot saved as ´");
+		strcpy(temprivi,"Screenshot saved as \B4");
 		strcat(temprivi,screenshot_name);
-		strcat(temprivi,"´");
+		strcat(temprivi,"\B4");
 		kirjota(1,0,screenshot_timer/5000,0,10,10,0,temprivi);
 	}
 	if(game_saved_timer>0){
@@ -2453,15 +2453,15 @@ bool initkeyb(void)
     hr = DirectInputCreate(hInst, DIRECTINPUT_VERSION, &g_lpDI, NULL); 
     if FAILED(hr) return FALSE;
 	
-	//näpiskä
+	//n\E4pisk\E4
 				// Retrieve a pointer to an IDirectInputDevice7 interface 
-				hr = g_lpDI->CreateDevice(GUID_SysKeyboard, 
-						&g_lpDIDevice, NULL); 
-				if FAILED(hr)     
-				{
-					deinitkeyb();         
-					return FALSE;     
-				}  
+				//hr = g_lpDI->CreateDevice(GUID_SysKeyboard, 
+				//		&g_lpDIDevice, NULL); 
+				//if FAILED(hr)     
+				//{
+				//	deinitkeyb();         
+				//	return FALSE;     
+				//}  
 				// Now that you have an IDirectInputDevice7 interface, get 
 				// it ready to use.  
 				// Set the data format using the predefined keyboard data 
@@ -2687,7 +2687,7 @@ m_pDevice->SetRenderState(D3DRS_DESTBLEND,
 		//matriisi->Pop();
 	}
 	//m_pDevice->SetRenderState(D3DRS_SPECULARENABLE,FALSE);
-	//m_pDevice->SetTexture( 0, NULL);//tarvitaanko tätä?
+	//m_pDevice->SetTexture( 0, NULL);//tarvitaanko t\E4t\E4?
 	return true;
 
 }
@@ -2718,12 +2718,12 @@ BOOL drawfast(obj *tavara)
 		
 	}
 	//m_pDevice->SetRenderState(D3DRS_SPECULARENABLE,FALSE);
-	//m_pDevice->SetTexture( 0, NULL);//tarvitaanko tätä?
+	//m_pDevice->SetTexture( 0, NULL);//tarvitaanko t\E4t\E4?
 	return true;
 
 }
 
-//rivi tarkottaa rivitetäänkö teksti(monenko char:n päästä
+//rivi tarkottaa rivitet\E4\E4nk\F6 teksti(monenko char:n p\E4\E4st\E4
 //void kirjota(-1,-1,-1,INT x, INT y, INT rivi,CHAR teksti[100],LPDIRECTDRAWSURFACE7 pinta,LPDIRECTDRAWSURFACE7 font1)
 void kirjota(float size,float r,float g, float b, float x, float y, INT rivi,CHAR teksti[1000])
 {
@@ -2814,9 +2814,9 @@ void kirjota(float size,float r,float g, float b, float x, float y, INT rivi,CHA
 			case 'x':{kirjainleveys=16;nume=23;goto fa;}
 			case 'y':{kirjainleveys=16;nume=24;goto fa;}
 			case 'z':{kirjainleveys=15;nume=25;goto fa;}
-			case 'å':{kirjainleveys=16;nume=26;goto fa;}
-			case 'ä':{kirjainleveys=16;nume=27;goto fa;}
-			case 'ö':{kirjainleveys=16;nume=28;goto fa;}
+			case '\E5':{kirjainleveys=16;nume=26;goto fa;}
+			case '\E4':{kirjainleveys=16;nume=27;goto fa;}
+			case '\F6':{kirjainleveys=16;nume=28;goto fa;}
 			case '1':{kirjainleveys=12;nume=29;goto fa;}
 			case '2':{kirjainleveys=19;nume=30;goto fa;}
 			case '3':{kirjainleveys=19;nume=31;goto fa;}
@@ -2831,7 +2831,7 @@ void kirjota(float size,float r,float g, float b, float x, float y, INT rivi,CHA
 			case '.':{kirjainleveys=5;nume=40;goto fa;}
 			case '/':{kirjainleveys=12;nume=41;goto fa;}
 			case ':':{kirjainleveys=8;nume=42;goto fa;}
-			case '´':{kirjainleveys=5;nume=43;goto fa;}
+			case '\B4':{kirjainleveys=5;nume=43;goto fa;}
 			case '?':{kirjainleveys=16;nume=44;goto fa;}
 			case ',':{kirjainleveys=5;nume=45;goto fa;}
 			case '!':{kirjainleveys=5;nume=46;goto fa;}
@@ -2864,16 +2864,16 @@ void kirjota(float size,float r,float g, float b, float x, float y, INT rivi,CHA
 			case 'X':{kirjainleveys=20;nume=23;goto fr;}
 			case 'Y':{kirjainleveys=21;nume=24;goto fr;}
 			case 'Z':{kirjainleveys=19;nume=25;goto fr;}
-			case 'Å':{kirjainleveys=22;nume=26;goto fr;}
-			case 'Ä':{kirjainleveys=22;nume=27;goto fr;}
-			case 'Ö':{kirjainleveys=20;nume=28;goto fr;}
+			case '\C5':{kirjainleveys=22;nume=26;goto fr;}
+			case '\C4':{kirjainleveys=22;nume=27;goto fr;}
+			case '\D6':{kirjainleveys=20;nume=28;goto fr;}
 		}
 
 fr:
 		iso=1;
 fa:
 
-		//if(nume>-1){//jos ei ole väli
+		//if(nume>-1){//jos ei ole v\E4li
 			
 		
 		yk=(int)(nume/8);
@@ -3148,7 +3148,7 @@ void render_game(void){
 		if(cameraheight<1500)cameraheight=1500;
 	}
 
-	//kamera taustan tähdille
+	//kamera taustan t\E4hdille
 	//float kerroin=0.45f;
 	kamerax1=ship[0].x1/(200);
 	kameray1=4200;
@@ -4021,7 +4021,7 @@ void shoot(shipbase *shooter, int type, float time, float placex,float placey,fl
 		
 
 		for (q=0; q<1; q++){
-			//päätetään minkä luodin paikalle tulee uusi
+			//p\E4\E4tet\E4\E4n mink\E4 luodin paikalle tulee uusi
 
 			a=0;
 			b=0;
@@ -4191,7 +4191,7 @@ void fly_bullet(bulletbase *bulleta)
 		for (a=0; a<15; a++){
 			generate_particle(1,randDouble(1800,3500)*bulleta->power,osumax,0,osumaz,bulleta->rotate.x+randDouble(-0.2f,0.2f),0,0,randDouble(0.2f,0.8f),0,0,0);
 		}
-		//räjähdys
+		//r\E4j\E4hdys
 		for (a=0; a<weapon[bulleta->fromweapon].collision_explosion; a++){savusta(1.0f,randDouble(0.7f,1.8f)*bulleta->power, randDouble(0.015f,0.021f)*bulleta->power,true,randDouble(400,900),osumax+randDouble(-10,10),0,osumaz+randDouble(-10,10),0,randDouble(-pi,pi),0,0,0,0,0);}
 		//savuaa
 		for (a=0; a<weapon[bulleta->fromweapon].collision_smoke; a++){savusta(0.6f,randDouble(0.6f,1.8f)*bulleta->power, 0.012f*bulleta->power,true,randDouble(1500,2500),osumax,0,osumaz,2,randDouble(-pi,pi),0,0,randDouble(-0.05f,0.05f),0,randDouble(-0.05f,0.05f));}
@@ -4248,7 +4248,7 @@ void fly_bullet(bulletbase *bulleta)
 			//sound
 			playsound(weapon[bulleta->fromweapon].sound_hit,1,osumax,osumaz,ship[player_controlled_ship].x1,ship[player_controlled_ship].z1);
 
-			//räjähdys
+			//r\E4j\E4hdys
 			for (a=0; a<weapon[bulleta->fromweapon].collision_explosion; a++){savusta(1.0f,randDouble(0.7f,1.8f)*bulleta->power, randDouble(0.015f,0.021f)*bulleta->power,true,randDouble(400,900),osumax+randDouble(-10,10),0,osumaz+randDouble(-10,10),0,randDouble(-pi,pi),0,0,0,0,0);}
 			//savuaa
 			for (a=0; a<weapon[bulleta->fromweapon].collision_smoke; a++){savusta(0.6f,randDouble(0.6f,1.8f)*bulleta->power, 0.012f*bulleta->power,true,randDouble(1500,2500),osumax,0,osumaz,2,randDouble(-pi,pi),0,0,randDouble(-0.05f,0.05f),0,randDouble(-0.05f,0.05f));}
@@ -4272,12 +4272,12 @@ void fly_bullet(bulletbase *bulleta)
 
 		osuma:
 		{
-			//räjähdys
+			//r\E4j\E4hdys
 			for (a=0; a<weapon[bulleta->fromweapon].collision_explosion; a++){savusta(1.0f,randDouble(0.7f,1.8f)*bulleta->power, randDouble(0.015f,0.021f)*bulleta->power,true,randDouble(400,900),osumax+randDouble(-10,10),0,osumaz+randDouble(-10,10),0,randDouble(-pi,pi),0,0,0,0,0);}
 			//savuaa
 			for (a=0; a<weapon[bulleta->fromweapon].collision_smoke; a++){savusta(0.6f,randDouble(0.6f,1.8f)*bulleta->power, 0.012f*bulleta->power,true,randDouble(1500,2500),osumax,0,osumaz,2,randDouble(-pi,pi),0,0,randDouble(-0.05f,0.05f),0,randDouble(-0.05f,0.05f));}
 
-			//luoti häviää
+			//luoti h\E4vi\E4\E4
 			bulleta->dead=true;	
 			
 			//sound
@@ -4285,7 +4285,7 @@ void fly_bullet(bulletbase *bulleta)
 
 			if(asteroid[q].size<0.7f){
 				asteroid[q].dead=true;
-				//palaset lentää
+				//palaset lent\E4\E4
 				for (a=0; a<35; a++){
 					generate_particle(1,randDouble(800,1500)*bulleta->power,osumax,0,osumaz,randDouble(-pi,pi),0,0,randDouble(0,0.3f),0,0,0);
 				}
@@ -4443,7 +4443,7 @@ void renderbattle(void){
 	m_pDevice->SetRenderState(D3DRS_ALPHABLENDENABLE,FALSE);
 
 	//asteroidit aluksen tasolla
-	//näkyykö?
+	//n\E4kyyk\F6?
 	for (a=0; a<maksimiasteroid; a++){
 			if(asteroid[a].dead)continue;
 			if(asteroid[a].distance<sqr(2000*(cameraheight*0.00022f)))asteroid[a].visible=true;
@@ -4552,7 +4552,7 @@ void renderbattle(void){
 		}
 		
 		
-		//ilmakehä / rengas
+		//ilmakeh\E4 / rengas
 		if(battle.planet.atmosphere!=-1){
 			m_pDevice->SetRenderState( D3DRS_AMBIENT, 0x00FFFFFF);
 			m_pDevice->SetRenderState(D3DRS_ZENABLE ,TRUE);
@@ -4882,7 +4882,7 @@ void rendersolarsystem(void){//draws solar system
 	}
 
 
-	//planeetat lentää
+	//planeetat lent\E4\E4
 	for (q=0; q<maximumplanets; q++){
 			if(planet[q].dead)continue;				
 			fly_planet(&planet[q]);
@@ -5159,7 +5159,7 @@ void rendersolarsystem(void){//draws solar system
 		if(q==mission[missionlist[selected_mission]].planet)kirjota(1,1,0,0,textz,textx+0.5f,0,planet[q].name);
 	}
 
-	//onko lähellä planeettaa
+	//onko l\E4hell\E4 planeettaa
 	ship[0].nearstar2=ship[0].nearstar;
 	ship[0].nearstar=-1;
 	for (q=0; q<maximumplanets; q++){
@@ -5687,7 +5687,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				strcat(dialog.text,planet[value0].name);
 				strcat(dialog.text," have kindly given us ");
 				itoa(dialog.option[0].cargoplus[3],temprivi,10);strcat(dialog.text,temprivi);
-				strcat(dialog.text," pieces of gold. In return they ask that we don´t kill them.");
+				strcat(dialog.text," pieces of gold. In return they ask that we don\B4t kill them.");
 
 				strcpy(dialog.option[0].text,"Good.");
 				dialog.option[0].general_effect=3;//trade
@@ -5700,7 +5700,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				strcat(dialog.text,planet[value0].name);
 				strcat(dialog.text,". He has given us a brand new ship!");
 
-				strcpy(dialog.option[0].text,"Let´s see it!");
+				strcpy(dialog.option[0].text,"Let\B4s see it!");
 				create_random_ship(&dialog.randomship,2,0);
 				dialog.option[0].general_effect=4;//give ship
 					dialog.option[0].effect_parameter=0;//give ship
@@ -5712,7 +5712,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				strcat(dialog.text,planet[value0].name);
 				strcat(dialog.text,". He has given us a brand new ship!");
 
-				strcpy(dialog.option[0].text,"Let´s see it!");
+				strcpy(dialog.option[0].text,"Let\B4s see it!");
 				create_random_ship(&dialog.randomship,2,0);
 				dialog.option[0].general_effect=4;//give ship
 					dialog.option[0].effect_parameter=0;//give ship
@@ -5726,7 +5726,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				strcat(dialog.text,planet[a].name);
 				strcat(dialog.text,".");
 
-				strcpy(dialog.option[0].text,"Oh, I don´t even want to know!");
+				strcpy(dialog.option[0].text,"Oh, I don\B4t even want to know!");
 				dialog.option[0].general_effect=0;//leave
 				dialog.options=1;
 
@@ -5806,9 +5806,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					strcat(dialog.text,planet[randomplanet(-1)].name);
 					strcat(dialog.text," on our way to ");
 					strcat(dialog.text,planet[randomplanet(-1)].name);
-					strcat(dialog.text,". Please don´t hurt, kill or enslave us.");
+					strcat(dialog.text,". Please don\B4t hurt, kill or enslave us.");
 					
-					strcpy(dialog.option[0].text,"We´ll leave you for now.");
+					strcpy(dialog.option[0].text,"We\B4ll leave you for now.");
 					strcpy(dialog.option[1].text,"Die you pathetic worms!");
 					dialog.options=2;					
 					dialog.option[0].general_effect=0;//leave
@@ -5821,9 +5821,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					strcat(dialog.text,planet[randomplanet(-1)].name);
 					strcat(dialog.text," en route to ");
 					strcat(dialog.text,planet[randomplanet(-1)].name);
-					strcat(dialog.text,". Please don´t hurt us, we just sold all our goods!");
+					strcat(dialog.text,". Please don\B4t hurt us, we just sold all our goods!");
 					
-					strcpy(dialog.option[0].text,"Then we won´t need to kill you.");
+					strcpy(dialog.option[0].text,"Then we won\B4t need to kill you.");
 					strcpy(dialog.option[1].text,"Methinks thou art lying!");
 					dialog.options=2;					
 					dialog.option[0].general_effect=0;//leave
@@ -5832,8 +5832,8 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					dialog.picture=1;//merchant
 				}
 				if(dialog.randomship.type==5){//traveller
-					strcpy(dialog.text,"Please, horrible terrible pirates, don´t take our money! We have children to feed!");
-					if(randInt(0,2)==0)strcpy(dialog.text,"Oh shoot! Pirates, again! We just gave all our money to the last bunch of you guys. Just let us go, and we won´t take offence.");					
+					strcpy(dialog.text,"Please, horrible terrible pirates, don\B4t take our money! We have children to feed!");
+					if(randInt(0,2)==0)strcpy(dialog.text,"Oh shoot! Pirates, again! We just gave all our money to the last bunch of you guys. Just let us go, and we won\B4t take offence.");					
 					
 					strcpy(dialog.option[0].text,"You are free to go as you wish.");
 					strcpy(dialog.option[1].text,"Quit your whining! You die now!");
@@ -5851,10 +5851,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					strcat(dialog.text,dialog.randomship.ship_basea.classname);
 					strcat(dialog.text," class refugee ship ");
 					strcat(dialog.text,dialog.randomship.name);
-					strcat(dialog.text,". Can anyone hear us? Our ship´s life support is failing, we are dying here! Please take us on board!");
+					strcat(dialog.text,". Can anyone hear us? Our ship\B4s life support is failing, we are dying here! Please take us on board!");
 					
-					strcpy(dialog.option[0].text,"We won´t waste our time on you!");
-					strcpy(dialog.option[1].text,"We´ll take you, but as slaves.");
+					strcpy(dialog.option[0].text,"We won\B4t waste our time on you!");
+					strcpy(dialog.option[1].text,"We\B4ll take you, but as slaves.");
 					strcpy(dialog.option[2].text,"I might just prefer killing you!");
 					dialog.options=3;
 					dialog.option[0].general_effect=0;//leave
@@ -5871,7 +5871,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					strcat(dialog.text,dialog.randomship.name);
 					strcat(dialog.text,". So, how about it? For 150 pieces my crew will be loyal to you.");
 						
-					strcpy(dialog.option[0].text,"Go away, we don´t need your kind!");					
+					strcpy(dialog.option[0].text,"Go away, we don\B4t need your kind!");					
 					strcpy(dialog.option[2].text,"I cannot trust you on this. Die punk!");
 					dialog.options=3;
 					dialog.option[0].general_effect=0;//leave
@@ -5881,14 +5881,14 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 					//enough money
 					if(shipslot[0].cargo[3]>=150){
-						strcpy(dialog.option[1].text,"Let´s join forces!");
+						strcpy(dialog.option[1].text,"Let\B4s join forces!");
 						dialog.option[1].general_effect=4;//give ship
 						dialog.option[1].effect_parameter=0;//give ship
 							dialog.option[1].cargominus[3]=150;//give money
 					}
 					//not enough money
 					if(shipslot[0].cargo[3]<150){
-						strcpy(dialog.option[1].text,"We don´t have the money.");
+						strcpy(dialog.option[1].text,"We don\B4t have the money.");
 						dialog.option[1].general_effect=0;//leave
 					}
 					
@@ -5896,10 +5896,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				if(dialog.randomship.type==2){//merchant
 					strcpy(dialog.text,"I just came from ");
 					strcat(dialog.text,planet[randomplanet(-1)].name);
-					strcat(dialog.text," and some contraband goods fell in to my lap. Twenty tons of the finest synthetic drugs. I´ll let you have them for, say 50 pieces. Do we have a deal?");
+					strcat(dialog.text," and some contraband goods fell in to my lap. Twenty tons of the finest synthetic drugs. I\B4ll let you have them for, say 50 pieces. Do we have a deal?");
 						
-					strcpy(dialog.option[0].text,"No, we´re not interested.");					
-					strcpy(dialog.option[2].text,"We´ll just take them by force!");
+					strcpy(dialog.option[0].text,"No, we\B4re not interested.");					
+					strcpy(dialog.option[2].text,"We\B4ll just take them by force!");
 					dialog.options=3;
 					dialog.option[0].general_effect=0;//leave
 					dialog.option[2].general_effect=2;//attack
@@ -5908,19 +5908,19 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 					//enough money
 					if(shipslot[0].cargo[3]>=50){
-						strcpy(dialog.option[1].text,"All right, let´s trade.");
+						strcpy(dialog.option[1].text,"All right, let\B4s trade.");
 						dialog.option[1].general_effect=3;//trade
 							dialog.option[1].cargoplus[1]=20;//plus goods
 							dialog.option[1].cargominus[3]=50;//minus money
 					}
 					//not enough money
 					if(shipslot[0].cargo[3]<50){
-						strcpy(dialog.option[1].text,"We don´t have the money.");
+						strcpy(dialog.option[1].text,"We don\B4t have the money.");
 						dialog.option[1].general_effect=0;//leave
 					}					
 				}
 				if(dialog.randomship.type==3){//colonial navy
-					strcpy(dialog.text,"Well, well. What did we run into here? A pirate! A smelly, stupid, outlaw. Since I´m on a good mood, I promise I won´t blow you to bits if you have enough money. 100 pieces should do it.");
+					strcpy(dialog.text,"Well, well. What did we run into here? A pirate! A smelly, stupid, outlaw. Since I\B4m on a good mood, I promise I won\B4t blow you to bits if you have enough money. 100 pieces should do it.");
 					
 					strcpy(dialog.option[1].text,"You will have nothing but cold steel!");
 					dialog.options=2;
@@ -5930,21 +5930,21 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 					//enough money
 					if(shipslot[0].cargo[3]>=100){
-						strcpy(dialog.option[0].text,"Here´s your stupid money! Now go away!");
+						strcpy(dialog.option[0].text,"Here\B4s your stupid money! Now go away!");
 						dialog.option[0].general_effect=3;//trade
 							dialog.option[0].cargominus[3]=100;//minus money
 					}
 					//not enough money
 					if(shipslot[0].cargo[3]<100){
-						strcpy(dialog.option[0].text,"We don´t have enough money.");
+						strcpy(dialog.option[0].text,"We don\B4t have enough money.");
 						dialog.option[0].general_effect=2;//attack
 						dialog.option[0].effect_parameter=2;//attack ship
 					}					
 				}
 				if(dialog.randomship.type==4){//alien
-					strcpy(dialog.text,"Kiinnostaako uhkapeli? Väliltä sata viiva miinus sata rahaa olisi luvassa.        --The translation computer cannot comprehend this proposal, but accepting to it might be somewhat of a gamble.--");
+					strcpy(dialog.text,"Kiinnostaako uhkapeli? V\E4lilt\E4 sata viiva miinus sata rahaa olisi luvassa.        --The translation computer cannot comprehend this proposal, but accepting to it might be somewhat of a gamble.--");
 
-					strcpy(dialog.option[0].text,"Leave, we don´t understand you.");					
+					strcpy(dialog.option[0].text,"Leave, we don\B4t understand you.");					
 					strcpy(dialog.option[2].text,"Speak English or die alien bastard!");
 					dialog.options=3;
 					dialog.option[0].general_effect=0;//leave
@@ -5953,7 +5953,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					dialog.picture=6;//alien
 
 					//gamble money
-						strcpy(dialog.option[1].text,"All right, let´s gamble.");
+						strcpy(dialog.option[1].text,"All right, let\B4s gamble.");
 						dialog.option[1].general_effect=3;//trade
 							dialog.option[1].cargoplus[3]=randInt(0,100);//plus money
 							dialog.option[1].cargominus[3]=randInt(0,100);//minus money
@@ -5962,9 +5962,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				if(dialog.randomship.type==5){//traveller
 					strcpy(dialog.text,"We were just visiting ");
 					strcat(dialog.text,planet[randomplanet(-1)].name);
-					strcat(dialog.text," and the fuel prices there are just extraordinary! So we didn´t buy any fuel there and we are soon running out of it. Would you be willing to sell some?");
+					strcat(dialog.text," and the fuel prices there are just extraordinary! So we didn\B4t buy any fuel there and we are soon running out of it. Would you be willing to sell some?");
 						
-					strcpy(dialog.option[0].text,"No, we´ll leave you here to rot.");					
+					strcpy(dialog.option[0].text,"No, we\B4ll leave you here to rot.");					
 					strcpy(dialog.option[1].text,"No, but your life might be worth taking!");					
 					dialog.option[0].general_effect=0;//leave
 					dialog.option[1].general_effect=2;//attack
@@ -5974,7 +5974,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 					//5 fuel
 					if(shipslot[0].cargo[4]>5){
-						strcpy(dialog.option[2].text,"We´ll trade 5 units of fuel for 30 pieces.");
+						strcpy(dialog.option[2].text,"We\B4ll trade 5 units of fuel for 30 pieces.");
 						dialog.option[2].general_effect=3;//trade
 							dialog.option[2].cargoplus[3]=30;//plus money
 							dialog.option[2].cargominus[4]=5;//minus fuel
@@ -5982,7 +5982,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					}
 					//10 fuel
 					if(shipslot[0].cargo[4]>16){
-						strcpy(dialog.option[3].text,"We´ll trade 15 units of fuel for 80 pieces.");
+						strcpy(dialog.option[3].text,"We\B4ll trade 15 units of fuel for 80 pieces.");
 						dialog.option[3].general_effect=3;//trade
 							dialog.option[3].cargoplus[3]=80;//plus money
 							dialog.option[3].cargominus[4]=15;//minus fuel
@@ -5995,9 +5995,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				if(dialog.randomship.type==0){//refugee
 					strcpy(dialog.text,"The aliens just torched our homes on ");
 					strcat(dialog.text,planet[randomplanet(-1)].name);
-					strcat(dialog.text," and we are not going to take this abuse anymore! It´s time for you pirates to learn a lesson!");					
+					strcat(dialog.text," and we are not going to take this abuse anymore! It\B4s time for you pirates to learn a lesson!");					
 					
-					strcpy(dialog.option[0].text,"You won´t stand a chance.");
+					strcpy(dialog.option[0].text,"You won\B4t stand a chance.");
 					dialog.options=1;					
 					dialog.option[0].general_effect=2;//attack
 					dialog.option[0].effect_parameter=2;//attack ship
@@ -6025,14 +6025,14 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					strcpy(dialog.text,"Your reign of terror has come to an end, the colonial navy is here to make sure of it.");
 					if(randInt(0,2)==0)strcpy(dialog.text,"Capturing you will be my ticket for a promotion! Prepare to taste some colonial steel!");
 
-					strcpy(dialog.option[0].text,"Let´s see if you can back your words!");
+					strcpy(dialog.option[0].text,"Let\B4s see if you can back your words!");
 					dialog.options=1;					
 					dialog.option[0].general_effect=2;//attack
 					dialog.option[0].effect_parameter=2;//attack ship
 					dialog.picture=5;//general
 				}
 				if(dialog.randomship.type==4){//alien
-					strcpy(dialog.text,"Teidän surkeiden maan matojen aika on tullut, räjäytän teidät muussiksi!        --The translation computer cannot comprehend this message, but judging by the exclamation mark, it is most hostile.--");
+					strcpy(dialog.text,"Teid\E4n surkeiden maan matojen aika on tullut, r\E4j\E4yt\E4n teid\E4t muussiksi!        --The translation computer cannot comprehend this message, but judging by the exclamation mark, it is most hostile.--");
 
 					strcpy(dialog.option[0].text,"And the same to you alien swine!");
 					dialog.options=1;					
@@ -6057,10 +6057,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 	if(dialogtype==2){
 		//on pluto
 		if(value0==0){
-			strcpy(dialog.text,"Haha! We captured the ship! The crew has elected you as their captain! I´m your first mate, the name´s Dusky Joe. Time to get into business. At the time we captured the ship we were orbiting Pluto, so I´d recommend visiting there first. The old captain and few high officers of this ship are at our cargo base as slaves. If you like, I could give you a few pointers on controlling the ship. So?");
+			strcpy(dialog.text,"Haha! We captured the ship! The crew has elected you as their captain! I\B4m your first mate, the name\B4s Dusky Joe. Time to get into business. At the time we captured the ship we were orbiting Pluto, so I\B4d recommend visiting there first. The old captain and few high officers of this ship are at our cargo base as slaves. If you like, I could give you a few pointers on controlling the ship. So?");
 			
 			strcpy(dialog.option[0].text,"Alright, what do you suggest?");
-			strcpy(dialog.option[1].text,"No no. I´ll figure it out myself!");
+			strcpy(dialog.option[1].text,"No no. I\B4ll figure it out myself!");
 			dialog.options=2;
 			
 			dialog.option[0].general_effect=1;//talk				
@@ -6078,7 +6078,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcpy(dialog.text,"It is our mission as interplanetary pirates to kill, enslave and loot as much and as often as possible. In space we will find helpless ships to capture, and on planets we can get all sorts of malevolent missions. Other pirates may be after our loot. There may even be aliens! Remember our motto: GRR! Now a bit on the keyboard controls.");
 			
 			strcpy(dialog.option[0].text,"Go ahead.");
-			strcpy(dialog.option[1].text,"I´ll figure them without you!");
+			strcpy(dialog.option[1].text,"I\B4ll figure them without you!");
 			dialog.options=2;
 			
 			dialog.option[0].general_effect=1;//talk				
@@ -6093,9 +6093,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		}
 		//education2
 		if(value0==2){
-			strcpy(dialog.text,"Every time you don´t know what the keys are, you can find out the default keys by pressing F1. Most keys are fully configurable, but the factory defaults for flying in space are as follows: Up, down, left, right - move spacecraft. 1, 2 - shoot. 3 - switch ship. Enter - map. Space - mission log. Now would be a good time to visit Pluto. Go with my blessings!");
+			strcpy(dialog.text,"Every time you don\B4t know what the keys are, you can find out the default keys by pressing F1. Most keys are fully configurable, but the factory defaults for flying in space are as follows: Up, down, left, right - move spacecraft. 1, 2 - shoot. 3 - switch ship. Enter - map. Space - mission log. Now would be a good time to visit Pluto. Go with my blessings!");
 			
-			strcpy(dialog.option[0].text,"I´m off.");
+			strcpy(dialog.option[0].text,"I\B4m off.");
 			dialog.options=1;
 			
 			dialog.option[0].general_effect=0;//leave
@@ -6107,9 +6107,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		}
 		//start plot
 		if(value0==3){
-			strcpy(dialog.text,"Great to meet you! I´m Diesel Dan, and I understand you are looking for a way to save your hide when the sun blows, no? I suppose everyone is, but for you, I have something special: I can get you in contact with the aliens. Just hear my offer, won´t you?");
+			strcpy(dialog.text,"Great to meet you! I\B4m Diesel Dan, and I understand you are looking for a way to save your hide when the sun blows, no? I suppose everyone is, but for you, I have something special: I can get you in contact with the aliens. Just hear my offer, won\B4t you?");
 			
-			strcpy(dialog.option[0].text,"I´m listening.");
+			strcpy(dialog.option[0].text,"I\B4m listening.");
 			dialog.options=1;
 			
 			dialog.option[0].general_effect=1;//talk				
@@ -6133,13 +6133,13 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,planet[dialog.option[0].mission.planet].name);
 			strcat(dialog.option[0].mission.text," (" );
 			strcat(dialog.option[0].mission.text,planet[dialog.option[0].mission.planet].location);
-			strcat(dialog.option[0].mission.text,"). He might know the whereabouts of Dan´s brother, Petrol Pete.");//mission briefing
+			strcat(dialog.option[0].mission.text,"). He might know the whereabouts of Dan\B4s brother, Petrol Pete.");//mission briefing
 
-			strcpy(dialog.text,"I don´t know if you believe in prophecies, captain, but I have been told that I´m destined to die by the hand of my brother: Petrol Pete. I´d prefer him to die before me. However I cannot kill him myself, I don´t even know where he is! But there is someone on ");
+			strcpy(dialog.text,"I don\B4t know if you believe in prophecies, captain, but I have been told that I\B4m destined to die by the hand of my brother: Petrol Pete. I\B4d prefer him to die before me. However I cannot kill him myself, I don\B4t even know where he is! But there is someone on ");
 			strcat(dialog.text,planet[dialog.option[0].mission.planet].name);
-			strcat(dialog.text," who does, and you must find him. Kill my brother, and I´ll tell you how to contact the aliens! Is it a deal?");
+			strcat(dialog.text," who does, and you must find him. Kill my brother, and I\B4ll tell you how to contact the aliens! Is it a deal?");
 			
-			strcpy(dialog.option[0].text,"Alright, I´ll look for him.");
+			strcpy(dialog.option[0].text,"Alright, I\B4ll look for him.");
 			dialog.options=1;
 			
 			dialog.option[0].general_effect=5;//set mission
@@ -6152,9 +6152,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//meet contact on planet
 		if(value0==5){
 
-			strcpy(dialog.text,"Captain, we have located Diesel Dan´s contact here on ");
+			strcpy(dialog.text,"Captain, we have located Diesel Dan\B4s contact here on ");
 			strcat(dialog.text,planet[ship[0].onplanet].name);
-			strcat(dialog.text,". It seems there are two people here who can tell us where to find Dan´s brother. Both claim that if you meet one of them, you cannot meet the other. Would you like to meet the mangy pirate, or the deplorable explorer?");
+			strcat(dialog.text,". It seems there are two people here who can tell us where to find Dan\B4s brother. Both claim that if you meet one of them, you cannot meet the other. Would you like to meet the mangy pirate, or the deplorable explorer?");
 			
 			strcpy(dialog.option[0].text,"The pirate.");
 			strcpy(dialog.option[1].text,"The explorer.");
@@ -6190,24 +6190,24 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.name,temprivi);
 			strcat(dialog.option[0].mission.name," to pirate on ");
 			strcat(dialog.option[0].mission.name,planet[ship[0].onplanet].name);
-			strcpy(dialog.option[0].mission.text,"Diesel Dan´s contact was a pirate who asked ");//mission briefing
+			strcpy(dialog.option[0].mission.text,"Diesel Dan\B4s contact was a pirate who asked ");//mission briefing
 			itoa(shipslot[0].cargo[3]+10,temprivi,10);
 			strcat(dialog.option[0].mission.text,temprivi);
-			strcat(dialog.option[0].mission.text," gold pieces for the location of Dan´s brother. When you have enough money, return to ");
+			strcat(dialog.option[0].mission.text," gold pieces for the location of Dan\B4s brother. When you have enough money, return to ");
 			strcat(dialog.option[0].mission.text,planet[ship[0].onplanet].name);
 			strcat(dialog.option[0].mission.text," (");
 			strcat(dialog.option[0].mission.text,planet[ship[0].onplanet].location);
 			strcat(dialog.option[0].mission.text,").");
 
 
-			strcpy(dialog.text,"You have come for Petrol Pete haven´t you? Fool! Why should I betray my old friend? Bah! For cash maybe? For ");
+			strcpy(dialog.text,"You have come for Petrol Pete haven\B4t you? Fool! Why should I betray my old friend? Bah! For cash maybe? For ");
 			itoa(shipslot[0].cargo[3]+10,temprivi,10);
 			strcat(dialog.text,temprivi);
 			strcat(dialog.text," gold pieces I just might do it. Get the money, then come back here.");
 			
 			
 			strcpy(dialog.option[0].text,"I accept.");
-			strcpy(dialog.option[1].text,"I´ll get the info from your dead body!");
+			strcpy(dialog.option[1].text,"I\B4ll get the info from your dead body!");
 
 			dialog.option[0].general_effect=5;//set mission
 			dialog.option[1].general_effect=6;//attack and get plot
@@ -6226,10 +6226,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		if(value0==7){
 			create_random_ship(&dialog.randomship,1,0);//create ship for explorer/goon
 
-			strcpy(dialog.text,"You are the rookie pirate, the hired gun. Yes, I know the one you seek, Petrol Pete. I´m his old enemy, rival you might say. Both in the game making business. Bloody war over a stupid space privateering game. He has sent a hitman after me as well, and I would very much like you to kill him. If you can kill the goon, I´m sure I could give you Pete´s location.");
+			strcpy(dialog.text,"You are the rookie pirate, the hired gun. Yes, I know the one you seek, Petrol Pete. I\B4m his old enemy, rival you might say. Both in the game making business. Bloody war over a stupid space privateering game. He has sent a hitman after me as well, and I would very much like you to kill him. If you can kill the goon, I\B4m sure I could give you Pete\B4s location.");
 						
-			strcpy(dialog.option[0].text,"I´ll pulverize the goon then.");
-			strcpy(dialog.option[1].text,"I´ll get the location from your dead body!");
+			strcpy(dialog.option[0].text,"I\B4ll pulverize the goon then.");
+			strcpy(dialog.option[1].text,"I\B4ll get the location from your dead body!");
 
 			dialog.option[0].general_effect=6;//attack and get plot
 				dialog.option[0].effect_parameter=2;//attack ship
@@ -6262,10 +6262,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 			strcpy(dialog.text,"Thank you for the money fellow pirate. Now: Petrol Pete has been lurking on ");
 			strcat(dialog.text,planet[dialog.option[0].mission.planet].name);
-			strcat(dialog.text," for years. I don´t know what he does there, but I´m sure you can find in the local Space Bar.");
+			strcat(dialog.text," for years. I don\B4t know what he does there, but I\B4m sure you can find in the local Space Bar.");
 			
 			
-			strcpy(dialog.option[0].text,"Great! I´ll go get him.");
+			strcpy(dialog.option[0].text,"Great! I\B4ll go get him.");
 
 			dialog.option[0].general_effect=5;//set mission			
 			dialog.options=1;
@@ -6291,7 +6291,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,") and take care of him. Go already! This is just a logbook! You are wasting your time reading this! Press space to continue!");//mission briefing
 
 
-			strcpy(dialog.text,"Oh mighty pirate lord, we have searched the wreckage of the pirate´s ship and found absolutely nothing of value. However we were able to find the location of Petrol Pete by looking up his name in the interplanetary phone book found in the wreck. I suggest confronting him next. Remember to check your logbook.");
+			strcpy(dialog.text,"Oh mighty pirate lord, we have searched the wreckage of the pirate\B4s ship and found absolutely nothing of value. However we were able to find the location of Petrol Pete by looking up his name in the interplanetary phone book found in the wreck. I suggest confronting him next. Remember to check your logbook.");
 			strcpy(dialog.option[0].text,"Set course.");
 			strcpy(dialog.option[1].text,"Does it have my name also?");
 
@@ -6322,7 +6322,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,") and split him.");//mission briefing
 
 
-			strcpy(dialog.text,"The explorer´s computers indeed do contain the information we seek. Petrol Pete can be found at ");
+			strcpy(dialog.text,"The explorer\B4s computers indeed do contain the information we seek. Petrol Pete can be found at ");
 			strcat(dialog.text,planet[dialog.option[0].mission.planet].name);
 			strcat(dialog.text,". And personally I want to congratulate you on that last shot you took at him. It was like no other shot before!");
 			
@@ -6383,7 +6383,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 
 			strcpy(dialog.text,"No, there is no one listed under Player 1.");
-			strcpy(dialog.option[0].text,"Such a shame. Well, let´s get going.");
+			strcpy(dialog.option[0].text,"Such a shame. Well, let\B4s get going.");
 
 			dialog.option[0].general_effect=5;//set mission
 			dialog.options=1;
@@ -6411,8 +6411,8 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 
 			create_random_ship(&dialog.randomship,2,0);//create ship
-			strcpy(dialog.text,"You have... found me. I know my brother has sent you after me. He and his stupid prophecies! Perhaps I should make those prophecies come true. Captain, I´ll make you a deal. I will give you 150 pieces if you go and kill Diesel Dan. Remember, you puny bastard, that I´m much harder to defeat than him!");
-			strcpy(dialog.option[0].text,"I think I´ll still kill you!");
+			strcpy(dialog.text,"You have... found me. I know my brother has sent you after me. He and his stupid prophecies! Perhaps I should make those prophecies come true. Captain, I\B4ll make you a deal. I will give you 150 pieces if you go and kill Diesel Dan. Remember, you puny bastard, that I\B4m much harder to defeat than him!");
+			strcpy(dialog.option[0].text,"I think I\B4ll still kill you!");
 			strcpy(dialog.option[1].text,"Alright, I accept. Show me the money!");
 			
 			dialog.option[0].general_effect=6;//attack and get plot
@@ -6469,7 +6469,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 				if(b==1){
 					strcat(dialog.text,"Seeking for someone to take a package to ");
 					strcat(dialog.text,planet[dialog.option[0].mission.planet].name);
-					strcat(dialog.text,". No, there´s nothing in it. Absolutely nothing. Recommend keeping it in a cool place to avoid bad consequences. Paid ");
+					strcat(dialog.text,". No, there\B4s nothing in it. Absolutely nothing. Recommend keeping it in a cool place to avoid bad consequences. Paid ");
 					itoa(dialog.option[0].mission.cargoplus[3],temprivi,10);strcat(dialog.text,temprivi);
 					strcat(dialog.text," monetary thingys on completion.");
 				}
@@ -6522,7 +6522,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcpy(dialog.text,"The mission was successful captain. We are resuming course.");
 			strcpy(dialog.option[0].text,"Great!");
 			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Carry on!");
-			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Let´s go!");
+			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Let\B4s go!");
 
 			dialog.option[0].general_effect=0;//leave
 			dialog.options=1;
@@ -6589,7 +6589,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			
 			strcpy(dialog.option[0].text,"Great!");
 			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Carry on!");
-			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Let´s go!");
+			if(randInt(0,3)==0)strcpy(dialog.option[0].text,"Let\B4s go!");
 
 			dialog.option[0].general_effect=3;//trade
 			dialog.options=1;
@@ -6615,7 +6615,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");//mission briefing
 			
 			strcpy(dialog.text,"Captain, now that Petrol Pete has been killed, we should go see Dan for the reward he promised.");
-			strcpy(dialog.option[0].text,"Let´s see if he is true to his word.");
+			strcpy(dialog.option[0].text,"Let\B4s see if he is true to his word.");
 			
 			dialog.option[0].general_effect=5;//set mission
 
@@ -6643,12 +6643,12 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");//mission briefing
 			dialog.option[1]=dialog.option[0];
 
-			strcpy(dialog.text,"Master. Master. We have successfully dealt injustice to Diesel Dan. In addition we have deduced the location of the aliens from the transmission logs on Dan´s ship. It seems Dan had some dealings with the aliens. What exactly did he do with the aliens, remains a mystery. In any case we should be heading to ");
+			strcpy(dialog.text,"Master. Master. We have successfully dealt injustice to Diesel Dan. In addition we have deduced the location of the aliens from the transmission logs on Dan\B4s ship. It seems Dan had some dealings with the aliens. What exactly did he do with the aliens, remains a mystery. In any case we should be heading to ");
 			strcat(dialog.text,planet[dialog.option[1].mission.planet].name);
 			strcat(dialog.text," to discuss saving our lives.");
 
 			strcpy(dialog.option[0].text,"I wonder what the aliens look like?");
-			strcpy(dialog.option[1].text,"Yes, let´s go on.");
+			strcpy(dialog.option[1].text,"Yes, let\B4s go on.");
 			
 			dialog.option[0].general_effect=5;//set mission
 			dialog.option[1].general_effect=5;//set mission
@@ -6676,7 +6676,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");//mission briefing
 			dialog.option[1]=dialog.option[0];
 
-			strcpy(dialog.text,"I see that you bring my brother´s head. This is good news! You were trustworthy after all. Now to your reward. Did I promise you the Moon? An extra pair of eyes? A good gaming experience? Ah, now I remember... You wanted to see the aliens! I´d recommend keeping clear of them and just waiting for the sun to blow, such horror is their visage! But I see you are determined. ");
+			strcpy(dialog.text,"I see that you bring my brother\B4s head. This is good news! You were trustworthy after all. Now to your reward. Did I promise you the Moon? An extra pair of eyes? A good gaming experience? Ah, now I remember... You wanted to see the aliens! I\B4d recommend keeping clear of them and just waiting for the sun to blow, such horror is their visage! But I see you are determined. ");
 			strcat(dialog.text,planet[dialog.option[1].mission.planet].name);
 			strcat(dialog.text," is their base of operations. Now go.");
 
@@ -6699,7 +6699,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			dialog.ships=10;//amount of ships in battle
 			create_random_ship(&dialog.randomship,4,0);//create ship (alien)
 
-			strcpy(dialog.text,"It´s the famous pirate captain! Yes, you are here to be saved. Tsah tsah! Saa-aved from the menace! Do you want to fee-eel the beat? Dab dab! Hear the muusiic! Do you waant to be saa-aved?");
+			strcpy(dialog.text,"It\B4s the famous pirate captain! Yes, you are here to be saved. Tsah tsah! Saa-aved from the menace! Do you want to fee-eel the beat? Dab dab! Hear the muusiic! Do you waant to be saa-aved?");
 			strcpy(dialog.option[0].text,"Oh yes! Save me!");
 			strcpy(dialog.option[1].text,"Die you alien salmon leech!");
 			
@@ -6724,7 +6724,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 			strcpy(dialog.text,"You are in league with that idiotic Petrol Pete? You have betrayed me! I will have my revenge! The prophecies will not come true!");
 						
-			strcpy(dialog.option[0].text,"Yup. You´re dead. Punk.");
+			strcpy(dialog.option[0].text,"Yup. You\B4re dead. Punk.");
 
 			dialog.option[0].general_effect=6;//attack and get plot
 				dialog.option[0].effect_parameter=2;//attack ship
@@ -6749,7 +6749,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 
 			strcpy(dialog.text,"And saved you shall be! Saved from the apocalypse! Saved from the supernova! But not without a price. A price so terrible, that the very floor shakes when I say what it is! You must pay us GAZILLION GOLD PIECES!");
-			strcpy(dialog.option[0].text,"I´ll be back with the money!");
+			strcpy(dialog.option[0].text,"I\B4ll be back with the money!");
 			strcpy(dialog.option[1].text,"Just what exactly do you do with all that gold?");
 			
 			dialog.option[0].general_effect=5;//set mission				
@@ -6798,8 +6798,8 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcpy(dialog.option[0].mission.text,"The aliens offered you salvation in exchange for GAZILLION GOLD PIECES. Where are you going to get that sort of money?");
 
 			strcpy(dialog.text,"But that is a secret. A big secret! Where would the omnipotent aliens ever need gold? For fuel cells perhaps? What about time travelling? I assure that the real reason is none of these. Now go! And when you come back, be sure to have the money!");
-			strcpy(dialog.option[0].text,"I´ll return with the money!");
-			strcpy(dialog.option[1].text,"Die! I won´t accept such arrogance!");
+			strcpy(dialog.option[0].text,"I\B4ll return with the money!");
+			strcpy(dialog.option[1].text,"Die! I won\B4t accept such arrogance!");
 			
 			dialog.option[0].general_effect=5;//set mission				
 			dialog.option[1].general_effect=6;//attack and get plot
@@ -6822,7 +6822,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			create_random_ship(&dialog.randomship,2,0);//create ship
 
 			strcpy(dialog.text,"Good day dear captain! I hear you are looking for a huge sum of money to pay the aliens, right? I might be of some assistance to you if you are willing to prove your good intend. I have selected a particularly nasty pirate ship for you to destroy. This pirate is so evil, that she even sells drugs and slaves! Kill the pirate, and I will help you get your money.");
-			strcpy(dialog.option[0].text,"Alright, let me at ´em!");
+			strcpy(dialog.option[0].text,"Alright, let me at \B4em!");
 			strcpy(dialog.option[1].text,"I prefer killing you!");
 			
 			dialog.option[0].general_effect=6;//attack and get plot
@@ -6883,9 +6883,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");//mission briefing
 			dialog.option[1]=dialog.option[0];
 
-			strcpy(dialog.text,"Thank you pirate brother, I´ve been hunting that idiot for years! Tell you what, I´ll reward your good deed. I was just on my way to Atlas to work for the Saturn Coalition. They are looking for a way to escape the supernova and they might have some work for you also. I hope they´ll save us!");
-			strcpy(dialog.option[0].text,"I´ll look into it.");
-			strcpy(dialog.option[1].text,"I´ll go there.");
+			strcpy(dialog.text,"Thank you pirate brother, I\B4ve been hunting that idiot for years! Tell you what, I\B4ll reward your good deed. I was just on my way to Atlas to work for the Saturn Coalition. They are looking for a way to escape the supernova and they might have some work for you also. I hope they\B4ll save us!");
+			strcpy(dialog.option[0].text,"I\B4ll look into it.");
+			strcpy(dialog.option[1].text,"I\B4ll go there.");
 
 			dialog.option[0].general_effect=5;//set mission
 			dialog.option[1].general_effect=5;//set mission
@@ -6919,7 +6919,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//Meet Coalition 2
 		if(value0==29){
 
-			strcpy(dialog.text,"You see, the sun is going to blow up any time now, and we at the Saturn Coalition aren´t going to sit idly by while Earthlings plans to take their planet out of the solar system with a quasi-quintuplet-device. Here is where you come in: You must raid the whole planet! Get us the device, the rest is yours to keep.");
+			strcpy(dialog.text,"You see, the sun is going to blow up any time now, and we at the Saturn Coalition aren\B4t going to sit idly by while Earthlings plans to take their planet out of the solar system with a quasi-quintuplet-device. Here is where you come in: You must raid the whole planet! Get us the device, the rest is yours to keep.");
 			
 			strcpy(dialog.option[0].text,"I hear you.");
 
@@ -6959,10 +6959,10 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[1].mission.text,planet[dialog.option[1].mission.planet].location);
 			strcat(dialog.option[1].mission.text,").");//mission briefing
 
-			strcpy(dialog.text,"It is not possible to launch a direct assault against earth. First we must find a weakness in Earth´s defences. I have two contacts: a corrupt Earth general who wishes to join us, and a refugee from Earth. He was a scientist with the quasi-quintuplet-device program until his supervisors found that he had been using the device to make popcorn.");
+			strcpy(dialog.text,"It is not possible to launch a direct assault against earth. First we must find a weakness in Earth\B4s defences. I have two contacts: a corrupt Earth general who wishes to join us, and a refugee from Earth. He was a scientist with the quasi-quintuplet-device program until his supervisors found that he had been using the device to make popcorn.");
 
-			strcpy(dialog.option[0].text,"I´ll speak with the general.");
-			strcpy(dialog.option[1].text,"I´ll go see the refugee.");
+			strcpy(dialog.option[0].text,"I\B4ll speak with the general.");
+			strcpy(dialog.option[1].text,"I\B4ll go see the refugee.");
 			
 			dialog.option[0].general_effect=5;//set mission
 			dialog.option[1].general_effect=5;//set mission
@@ -7002,7 +7002,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			itoa(dialog.option[0].mission.cargominus[3],temprivi,10);strcat(dialog.text,temprivi);
 			strcat(dialog.text," gold pieces!");
 
-			strcpy(dialog.option[0].text,"I´ll get you the money, can I have a receipt?");
+			strcpy(dialog.option[0].text,"I\B4ll get you the money, can I have a receipt?");
 			strcpy(dialog.option[1].text,"Die you cowardly bastard!");
 			
 			dialog.option[0].general_effect=5;//set mission
@@ -7043,11 +7043,11 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");
 
 
-			strcpy(dialog.text,"That´s what you get for 20 years of faithful service! They dump you! Really, I had nothing to do with that darned popcorn! When you blast the whole Earth into dust, remember to tell them that I am to blame. And now, there is only one thing we have to take care of first: My price is ");
+			strcpy(dialog.text,"That\B4s what you get for 20 years of faithful service! They dump you! Really, I had nothing to do with that darned popcorn! When you blast the whole Earth into dust, remember to tell them that I am to blame. And now, there is only one thing we have to take care of first: My price is ");
 			itoa(dialog.option[0].mission.cargominus[3],temprivi,10);strcat(dialog.text,temprivi);
 			strcat(dialog.text," gold!");
-			strcpy(dialog.option[0].text,"I´ll get you the money.");
-			strcpy(dialog.option[1].text,"I won´t pay. Decease you bastard!");
+			strcpy(dialog.option[0].text,"I\B4ll get you the money.");
+			strcpy(dialog.option[1].text,"I won\B4t pay. Decease you bastard!");
 			
 			dialog.option[0].general_effect=5;//set mission
 			dialog.option[1].general_effect=6;//attack and get plot
@@ -7065,7 +7065,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//paid general
 		if(value0==33){
 
-			strcpy(dialog.text,"Thank you. Here´s what I know: Most of Earth´s forces are garrisoned in a space station orbiting Earth. If you manage to destroy the station, they have no hope against you! Actually they´ll still probably kick your butt, but you should at least have a chance.");
+			strcpy(dialog.text,"Thank you. Here\B4s what I know: Most of Earth\B4s forces are garrisoned in a space station orbiting Earth. If you manage to destroy the station, they have no hope against you! Actually they\B4ll still probably kick your butt, but you should at least have a chance.");
 			
 			strcpy(dialog.option[0].text,"Marvelous.");
 
@@ -7083,7 +7083,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//killed general
 		if(value0==34){
 
-			strcpy(dialog.text,"Searching the remains of the general´s ship we have found important details of Earth´s defences. It seems that most of Earth´s forces are garrisoned in a space station orbiting Earth. If we manage to destroy the station, we should have a good chance of defeating Earth.");
+			strcpy(dialog.text,"Searching the remains of the general\B4s ship we have found important details of Earth\B4s defences. It seems that most of Earth\B4s forces are garrisoned in a space station orbiting Earth. If we manage to destroy the station, we should have a good chance of defeating Earth.");
 			
 			strcpy(dialog.option[0].text,"Excellent.");
 
@@ -7101,7 +7101,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//paid refugee
 		if(value0==35){
 
-			strcpy(dialog.text,"You may have heard that it is impossible to defeat Earth´s vast forces. That´s total bogus, you can take out most of their forces by blowing up their space station. I´d recommend a terrorist strike or a suicide attack. Make them pay!");
+			strcpy(dialog.text,"You may have heard that it is impossible to defeat Earth\B4s vast forces. That\B4s total bogus, you can take out most of their forces by blowing up their space station. I\B4d recommend a terrorist strike or a suicide attack. Make them pay!");
 			
 			strcpy(dialog.option[0].text,"Fabulous.");
 
@@ -7119,7 +7119,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//killed refugee
 		if(value0==36){
 
-			strcpy(dialog.text,"Captain, our squad with the tweezers has concluded their prolonged search of the ship wreckage. They found documents revealing that Earth´s forces are based in a single space station orbiting Earth. If we are able to destroy the station, we can easily topple Earth!");
+			strcpy(dialog.text,"Captain, our squad with the tweezers has concluded their prolonged search of the ship wreckage. They found documents revealing that Earth\B4s forces are based in a single space station orbiting Earth. If we are able to destroy the station, we can easily topple Earth!");
 			
 			strcpy(dialog.option[0].text,"Fantastic.");
 
@@ -7137,7 +7137,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//message received from coalition
 		if(value0==37){
 
-			strcpy(dialog.text,"We have just received a message from the Saturn Coalition. They have promised us military assistance in conquering Earth. They also said that it is up to us to blow the space station. We´ve come a long way captain. Now we are about to loot a whole planet!");
+			strcpy(dialog.text,"We have just received a message from the Saturn Coalition. They have promised us military assistance in conquering Earth. They also said that it is up to us to blow the space station. We\B4ve come a long way captain. Now we are about to loot a whole planet!");
 			
 			strcpy(dialog.option[0].text,"I see.");
 
@@ -7155,7 +7155,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//message received from coalition 2
 		if(value0==38){
 
-			strcpy(dialog.text,"It isn´t possible to blow up a space station with normal explosives. We have to find something bigger and faster. You know, I used to work as a miner at the asteroid belt. There was a huge asteroid mounted laser drill there, I think it is still operational even with these recent pirate uprisings. We could use it to blow up the station.");
+			strcpy(dialog.text,"It isn\B4t possible to blow up a space station with normal explosives. We have to find something bigger and faster. You know, I used to work as a miner at the asteroid belt. There was a huge asteroid mounted laser drill there, I think it is still operational even with these recent pirate uprisings. We could use it to blow up the station.");
 			
 			strcpy(dialog.option[0].text,"Go on.");
 
@@ -7184,7 +7184,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");//mission briefing
 			dialog.option[1]=dialog.option[0];
 
-			strcpy(dialog.text,"If my information is correct, there should be one such laser drill on Asteroid 2. It is likely heavily guarded, because these are very expensive pieces of mining machinery. Once we steal it, we have to find a platform to mount it on since our ships don´t have enough power to properly operate it.");
+			strcpy(dialog.text,"If my information is correct, there should be one such laser drill on Asteroid 2. It is likely heavily guarded, because these are very expensive pieces of mining machinery. Once we steal it, we have to find a platform to mount it on since our ships don\B4t have enough power to properly operate it.");
 			strcpy(dialog.option[0].text,"On my way.");
 			strcpy(dialog.option[1].text,"Set course to Asteroid 2!");
 
@@ -7202,7 +7202,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 		//at asteroid 2
 		if(value0==40){
 
-			strcpy(dialog.text,"Scarlet Corporation owns this mine and it´s equipment. If you do not have an appointment, we kindly ask you to leave. We do not buy anything, and we prefer not selling anything unless you are very wealthy. If you find yourselves here in malicious intends, remember that this mine is heavily guarded.");
+			strcpy(dialog.text,"Scarlet Corporation owns this mine and it\B4s equipment. If you do not have an appointment, we kindly ask you to leave. We do not buy anything, and we prefer not selling anything unless you are very wealthy. If you find yourselves here in malicious intends, remember that this mine is heavily guarded.");
 			
 			strcpy(dialog.option[0].text,"Give us the drill!");
 			strcpy(dialog.option[1].text,"Would you sell your drill?");
@@ -7246,8 +7246,8 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			strcat(dialog.option[0].mission.text,").");
 
 
-			strcpy(dialog.text,"You want our laser drill? If we sell it to you, what will we mine this asteroid field with? Slaves, of course! Captain, for 100 slaves this laser drill is yours. Remember, that it is highly sought-after: I´ve actually heard that some pirates working for the Saturn Coalition might be looking for it. Do you accept this trade?");			
-			strcpy(dialog.option[0].text,"I´ll get the you slaves. You evil slaver!");
+			strcpy(dialog.text,"You want our laser drill? If we sell it to you, what will we mine this asteroid field with? Slaves, of course! Captain, for 100 slaves this laser drill is yours. Remember, that it is highly sought-after: I\B4ve actually heard that some pirates working for the Saturn Coalition might be looking for it. Do you accept this trade?");			
+			strcpy(dialog.option[0].text,"I\B4ll get the you slaves. You evil slaver!");
 			strcpy(dialog.option[1].text,"Over your dead bodies!");
 			
 			dialog.option[0].general_effect=5;//set mission
@@ -7270,11 +7270,11 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			dialog.option[0].mission.planet=9;//The Moon
 			dialog.option[0].mission.prize_plot=43;//about to attack moon
 			strcpy(dialog.option[0].mission.name,"Attack Moon");//name mission
-			strcpy(dialog.option[0].mission.text,"Now that you have the laser drill, you are on your way to conquer Earth´s Moon to place the drill on.");//mission briefing			
+			strcpy(dialog.option[0].mission.text,"Now that you have the laser drill, you are on your way to conquer Earth\B4s Moon to place the drill on.");//mission briefing			
 			dialog.option[1]=dialog.option[0];
 
-			strcpy(dialog.text,"The drill is ours! Gnnnng! It reminds me of my dentist. Now that we have a BIG gun, we should put it to use. The Saturn Coalition has suggested that we place it on Earth´s moon and shoot down the space station. Once the station is destroyed, the Coalition´s forces will lure the rest of Earth´s forces away from Earth allowing us to strike!");
-			strcpy(dialog.option[0].text,"Let´s go see the Moon!");
+			strcpy(dialog.text,"The drill is ours! Gnnnng! It reminds me of my dentist. Now that we have a BIG gun, we should put it to use. The Saturn Coalition has suggested that we place it on Earth\B4s moon and shoot down the space station. Once the station is destroyed, the Coalition\B4s forces will lure the rest of Earth\B4s forces away from Earth allowing us to strike!");
+			strcpy(dialog.option[0].text,"Let\B4s go see the Moon!");
 			strcpy(dialog.option[1].text,"The Moon will soon be ours!");
 
 			dialog.option[0].general_effect=5;//set mission
@@ -7376,9 +7376,9 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			//take all player's gold
 			shipslot[0].cargo[3]=0;
 
-			strcpy(dialog.text,"Buahaha! Hahahaha! You should have seen your eyes when we used our new quasi-quintuplet-device to transfer the gold from under your noses! Now we shall go to the aliens and claim our redemption. You cannot stop us, we have too many ships on our side! End transmission. What? Isn´t it voice activated? I have to push this button? Click.");
+			strcpy(dialog.text,"Buahaha! Hahahaha! You should have seen your eyes when we used our new quasi-quintuplet-device to transfer the gold from under your noses! Now we shall go to the aliens and claim our redemption. You cannot stop us, we have too many ships on our side! End transmission. What? Isn\B4t it voice activated? I have to push this button? Click.");
 			
-			strcpy(dialog.option[0].text,"I´ll catch you!");			
+			strcpy(dialog.option[0].text,"I\B4ll catch you!");			
 			strcpy(dialog.option[1].text,"Just you wait!");
 
 			dialog.option[0].general_effect=1;//talk				
@@ -7407,7 +7407,7 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 			dialog.option[1]=dialog.option[0];
 
 			strcpy(dialog.text,"Good news captain! Our engineers have modified the laser drill and mounted it on a freighter craft. When we go after the Coalition, it will be a great advantage on our side. The Coalition is likely trying to make a deal with the aliens at the alien base, we should go there.");
-			strcpy(dialog.option[0].text,"Let´s hunt them down!");
+			strcpy(dialog.option[0].text,"Let\B4s hunt them down!");
 			strcpy(dialog.option[1].text,"Nobody steals our gold!");
 
 			create_random_ship(&dialog.randomship,4,5);//the new drill
@@ -7478,11 +7478,11 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 					dialog.ships=1;//amount of ships in battle
 					create_random_ship(&dialog.randomship,1,0);//create ship
 
-					strcpy(dialog.text,"I see you don´t currently have any fuel. I can offer you some:");
+					strcpy(dialog.text,"I see you don\B4t currently have any fuel. I can offer you some:");
 					strcat(dialog.text," Five liters for 30 gold.");
 						
-					strcpy(dialog.option[0].text,"No, we´re not interested.");					
-					strcpy(dialog.option[2].text,"We´ll just take that fuel by force!");
+					strcpy(dialog.option[0].text,"No, we\B4re not interested.");					
+					strcpy(dialog.option[2].text,"We\B4ll just take that fuel by force!");
 					dialog.options=3;
 					dialog.option[0].general_effect=0;//leave
 					dialog.option[2].general_effect=2;//attack
@@ -7491,14 +7491,14 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 
 					//enough money
 					if(shipslot[0].cargo[3]>=30){
-						strcpy(dialog.option[1].text,"All right, let´s trade.");
+						strcpy(dialog.option[1].text,"All right, let\B4s trade.");
 						dialog.option[1].general_effect=3;//trade
 							dialog.option[1].cargoplus[4]=5;//plus fuel
 							dialog.option[1].cargominus[3]=30;//minus money
 					}
 					//not enough money
 					if(shipslot[0].cargo[3]<30){
-						strcpy(dialog.option[1].text,"We don´t have the money.");
+						strcpy(dialog.option[1].text,"We don\B4t have the money.");
 						dialog.option[1].general_effect=0;//leave
 					}	
 					dialog.picture=1;//merchant
@@ -7506,38 +7506,38 @@ void create_dialog(int dialogtype,int value0,int select_choise){
 	}
 /*
 Good day dear captain! I hear you are looking for a huge sum of money to pay the aliens, right? I might be of some assistance to you if you are willing to prove your good intend. I have selected a particularly nasty pirate ship for you to destroy. They even sell drugs and slaves! Kill the pirate, and I will help you get your money.
-	Alright, let me at ´em!
+	Alright, let me at \B4em!
 		ukko:Now that you have proven you are on the side of good I will tell you my plan. The Saturn Coalition is looking for a way to escape the supernova, and they are looking for a skilled mercenary to run some errands. You can find their headquarters at Atlas.
 	I prefer killing you!
-		piraatti:Thank you pirate brother, I´ve been hunting that idiot for years! Tell you what, I´ll reward your good deed. I was just on my way to Atlas to work for the Saturn Coalition. They are looking for a way to escape the supernova and they might have some work for you also. I hope they´ll save us!
+		piraatti:Thank you pirate brother, I\B4ve been hunting that idiot for years! Tell you what, I\B4ll reward your good deed. I was just on my way to Atlas to work for the Saturn Coalition. They are looking for a way to escape the supernova and they might have some work for you also. I hope they\B4ll save us!
 Why have you come to the Saturn Coalition? Ah, yes! You are that promising new pirate I have been hearing so much about. Is it true that you single-handedly destroyed the whole Inca nation? In any case, we have a proposal for you. I know you are interested in getting a LOT of money, I think we can help you there.
-You see, the sun is going to blow up any time now, and we at the Saturn Coalition aren´t going to sit idly by while Earthlings plans to take their planet out of the solar system with a quasi-quintuplet-device. Here is where you come in: You must raid the whole planet! Get us the device, the rest is yours to keep.
-It is not possible to launch a direct assault against earth. First we must find a weakness in Earth´s defences. I have two contacts: a corrupt Earth general who wishes to join us, and a refugee from Earth. He was a scientist with the quasi-quintuplet-device program until his supervisors found that he had been using the device to make popcorn.
-	I´ll speak with the general.
+You see, the sun is going to blow up any time now, and we at the Saturn Coalition aren\B4t going to sit idly by while Earthlings plans to take their planet out of the solar system with a quasi-quintuplet-device. Here is where you come in: You must raid the whole planet! Get us the device, the rest is yours to keep.
+It is not possible to launch a direct assault against earth. First we must find a weakness in Earth\B4s defences. I have two contacts: a corrupt Earth general who wishes to join us, and a refugee from Earth. He was a scientist with the quasi-quintuplet-device program until his supervisors found that he had been using the device to make popcorn.
+	I\B4ll speak with the general.
 		Who would have thought that our Federation would some day lie in ruins? Who would have thought that the once mighty Saturn Coalition would send a low life pirate to deal with me in hopes of saving their hides? I will betray Earth, but it would be grossly stupid to do it without a price! You will pay one thousand gold pieces!
-			Here´s your money, can I have a receipt?
-				Thank you. Here´s what I know: Most of Earth´s forces are garrisoned in a space station orbiting Earth. If you manage to destroy the station, they have no hope against you! Actually they´ll still probably kick your butt, but you should at least have a chance.
+			Here\B4s your money, can I have a receipt?
+				Thank you. Here\B4s what I know: Most of Earth\B4s forces are garrisoned in a space station orbiting Earth. If you manage to destroy the station, they have no hope against you! Actually they\B4ll still probably kick your butt, but you should at least have a chance.
 			Die you cowardly bastard!
-				Searching the remains of the general´s ship we have found important details of Earth´s defences. It seems that most of Earth´s forces are garrisoned in a space station orbiting Earth. If we manage to destroy the station, we should have a good chance of defeating Earth.
-	I´ll go see the refugee.
-		That´s what you get for 20 years of faithful service! They dump you! Really, I had nothing to do with that darned popcorn! When you blast the whole Earth into dust, remember to tell them that I am to blame. And now, there is only one thing we have to take care of first: My price is 1000 gold.
-			I´ll pay. Let´s hear it.
-				You may have heard that it is impossible to defeat Earth´s vast forces. That´s total bogus, you can take out most of their forces by blowing up their space station. I´d recommend a terrorist strike or a suicide attack. Make them pay!
-			I won´t pay. Decease you bastard!
-				Captain, our squad with the tweezers has concluded their prolonged search of the ship wreckage. They found documents revealing that Earth´s forces are based in a single space station orbiting Earth. If we are able to destroy the station, we can easily topple Earth!
-We have just received a message from the Saturn Coalition. They have promised us military assistance in conquering Earth. They also said that it is up to us to blow the space station. We´ve come a long way captain. Now we are about to loot a whole planet!
-It isn´t possible to blow up a space station with normal explosives. We have to find something bigger and faster. You know, I used to work as a miner at the asteroid belt. There was a huge asteroid mounted laser drill there, I think it is still operational even with these recent pirate uprisings. We could use it to blow up the station.
-If my information is correct, there should be one such laser drill on Asteroid 2. It is likely heavily guarded, because these are very expensive pieces of mining machinery. Once we steal it, we have to find a platform to mount it on since our ships don´t have enough power to properly operate it.
-Scarlet Corporation owns this mine and it´s equipment. If you do not have an appointment, we kindly ask you to leave. We do not buy anything, and we prefer not selling anything unless you are very wealthy. If you find yourselves here in malicious intends, remember that this mine is heavily guarded.
+				Searching the remains of the general\B4s ship we have found important details of Earth\B4s defences. It seems that most of Earth\B4s forces are garrisoned in a space station orbiting Earth. If we manage to destroy the station, we should have a good chance of defeating Earth.
+	I\B4ll go see the refugee.
+		That\B4s what you get for 20 years of faithful service! They dump you! Really, I had nothing to do with that darned popcorn! When you blast the whole Earth into dust, remember to tell them that I am to blame. And now, there is only one thing we have to take care of first: My price is 1000 gold.
+			I\B4ll pay. Let\B4s hear it.
+				You may have heard that it is impossible to defeat Earth\B4s vast forces. That\B4s total bogus, you can take out most of their forces by blowing up their space station. I\B4d recommend a terrorist strike or a suicide attack. Make them pay!
+			I won\B4t pay. Decease you bastard!
+				Captain, our squad with the tweezers has concluded their prolonged search of the ship wreckage. They found documents revealing that Earth\B4s forces are based in a single space station orbiting Earth. If we are able to destroy the station, we can easily topple Earth!
+We have just received a message from the Saturn Coalition. They have promised us military assistance in conquering Earth. They also said that it is up to us to blow the space station. We\B4ve come a long way captain. Now we are about to loot a whole planet!
+It isn\B4t possible to blow up a space station with normal explosives. We have to find something bigger and faster. You know, I used to work as a miner at the asteroid belt. There was a huge asteroid mounted laser drill there, I think it is still operational even with these recent pirate uprisings. We could use it to blow up the station.
+If my information is correct, there should be one such laser drill on Asteroid 2. It is likely heavily guarded, because these are very expensive pieces of mining machinery. Once we steal it, we have to find a platform to mount it on since our ships don\B4t have enough power to properly operate it.
+Scarlet Corporation owns this mine and it\B4s equipment. If you do not have an appointment, we kindly ask you to leave. We do not buy anything, and we prefer not selling anything unless you are very wealthy. If you find yourselves here in malicious intends, remember that this mine is heavily guarded.
 	We need the drill.
-You want our laser drill? If we sell it to you, what will we mine this asteroid field with? Slaves, of course! Captain, for 100 slaves this laser drill is yours. Remember, that it is highly sought-after: I´ve actually heard that some pirates working for the Saturn Coalition might be looking for it. Do you accept this trade?
+You want our laser drill? If we sell it to you, what will we mine this asteroid field with? Slaves, of course! Captain, for 100 slaves this laser drill is yours. Remember, that it is highly sought-after: I\B4ve actually heard that some pirates working for the Saturn Coalition might be looking for it. Do you accept this trade?
 	Here are your slaves. You may actually know some of them.
 	Over your dead bodies!
-The drill is ours! You know that drill reminds me of my dentist. Now that we have it, we should put it to use. The Saturn Coalition has suggested that we place it on Earth´s moon and shoot down the space station. Once the station is destroyed, the Coalition forces will lure the rest of Earth´s forces away from Earth allowing us to strike.
+The drill is ours! You know that drill reminds me of my dentist. Now that we have it, we should put it to use. The Saturn Coalition has suggested that we place it on Earth\B4s moon and shoot down the space station. Once the station is destroyed, the Coalition forces will lure the rest of Earth\B4s forces away from Earth allowing us to strike.
 Your forces are in orbit above Moon. Now is the time to kick some lunar ass!
 	Attack!
 Sir! Quickly! Earth has sent a squadron after us! We have to protect the drill!
-välianimaatio:The drill is carefully targeted and fired. Earth´s portentous space station is blown up within seconds. While Coalition´s forces engage what is left of Earth´s fleet, you prepare to attack.
+v\E4lianimaatio:The drill is carefully targeted and fired. Earth\B4s portentous space station is blown up within seconds. While Coalition\B4s forces engage what is left of Earth\B4s fleet, you prepare to attack.
 Below you is Earth. Your ticket to salvation. The last handful of ships approach you. Without hesitation you give the command:
 	Attack!
 	Charge!
@@ -9052,7 +9052,7 @@ void render_ships(void){
 	}
 	if(pelivaihe2==1){//choose ship to capture
 		if(options[4])//easy mode
-			kirjota(1,-1,-1,-1,272,418,17,"Captain, you may now select one ship you wish to capture. Since you´ve set easy mode, you don´t need to fight for the ship - it´s captured automatically. Press esc to not capture a ship at all.");
+			kirjota(1,-1,-1,-1,272,418,17,"Captain, you may now select one ship you wish to capture. Since you\B4ve set easy mode, you don\B4t need to fight for the ship - it\B4s captured automatically. Press esc to not capture a ship at all.");
 		else
 			kirjota(1,-1,-1,-1,272,418,17,"Captain, you may now select one ship you wish to attemp to capture. While capturing use space key to shoot, alt to strafe and arrow keys to navigate. Press esc to not capture a ship at all.");
 	}
@@ -9450,7 +9450,7 @@ void render_capture(void){//renders the capture scene
 
 			osuma1:
 			playsound(10,0.8f,0,0,0,0);
-			//räjähdys
+			//r\E4j\E4hdys
 			for (b=0; b<2; b++){savusta(1.0f,randDouble(0.2f,0.5f), randDouble(0.003f,0.009f),true,randDouble(400,900),osumax+randDouble(-10,10),0,osumaz+randDouble(-10,10),0,randDouble(-pi,pi),0,0,0,0,0);}
 			//savuaa
 			for (b=0; b<2; b++){savusta(0.6f,randDouble(0.1f,0.4f), 0.002f,true,randDouble(1500,2500),osumax,0,osumaz,2,randDouble(-pi,pi),0,0,randDouble(-0.05f,0.05f),0,randDouble(-0.05f,0.05f));}
@@ -9514,7 +9514,7 @@ void rendersmoke(float camq,float camw,float came){
 	m_pDevice->SetRenderState( D3DRS_AMBIENT, 0x00000000);
 			m_pDevice->LightEnable(0, FALSE);
 			m_pDevice->LightEnable(1, FALSE);
-			m_pDevice->SetRenderState(D3DRS_ZWRITEENABLE,FALSE);//ei kirjota z-bufferiin, jotta savut olisi läpinäkyvät
+			m_pDevice->SetRenderState(D3DRS_ZWRITEENABLE,FALSE);//ei kirjota z-bufferiin, jotta savut olisi l\E4pin\E4kyv\E4t
 			m_pDevice->SetRenderState(D3DRS_ZENABLE,FALSE);
 			m_pDevice->SetRenderState(D3DRS_ALPHABLENDENABLE ,TRUE);
 
@@ -9537,7 +9537,7 @@ void rendersmoke(float camq,float camw,float came){
 					draw(savu[q].transparency,savu[q].transparency,savu[q].transparency,&mallit[0].malli[0]);
 					break;					   
 				}
-				case 1:{//räjähdys
+				case 1:{//r\E4j\E4hdys
 					matriisi->LoadIdentity();
 					matriisi->TranslateLocal(savu[q].paikka.x,savu[q].paikka.y,savu[q].paikka.z);
 					matriisi->RotateYawPitchRollLocal(camq,camw,came);
@@ -9573,11 +9573,11 @@ void render_cutscene(void){//renders a cutscene
 	int q;
 	switch(pelivaihe2){				
 		case 0:{
-					strcpy(teksti,"The year was 2314 and you had just been hired as a crewman of a small cargo vessel Wolf IV. Transporting goods between mankinds most remote colonies: Saturn´s moons, Pluto and such.");
+					strcpy(teksti,"The year was 2314 and you had just been hired as a crewman of a small cargo vessel Wolf IV. Transporting goods between mankinds most remote colonies: Saturn\B4s moons, Pluto and such.");
 						break;
 			   }
 		case 1:{
-					strcpy(teksti,"Mankind had spread to pretty much everywhere in the solar system forming the Federation. Some even dreamed of going to other stars, but no one had such technology. It was a peaceful time, no wars, no killing. You could almost wonder why everyone had big armed starships, but that was the way it had to be. If you are a spacefaring race, every single one of your ships has to have a lot of guns aboard even though it´s peace.");
+					strcpy(teksti,"Mankind had spread to pretty much everywhere in the solar system forming the Federation. Some even dreamed of going to other stars, but no one had such technology. It was a peaceful time, no wars, no killing. You could almost wonder why everyone had big armed starships, but that was the way it had to be. If you are a spacefaring race, every single one of your ships has to have a lot of guns aboard even though it\B4s peace.");
 						break;
 			   }
 		case 2:{
@@ -9593,7 +9593,7 @@ void render_cutscene(void){//renders a cutscene
 						break;
 			   }
 		case 5:{
-					strcpy(teksti,"The drill is carefully targeted and fired. Earth´s portentous space station is blown up within seconds. While Coalition´s forces engage what is left of Earth´s fleet, you prepare to attack.");
+					strcpy(teksti,"The drill is carefully targeted and fired. Earth\B4s portentous space station is blown up within seconds. While Coalition\B4s forces engage what is left of Earth\B4s fleet, you prepare to attack.");
 						break;
 			   }
 		case 6:{
@@ -10936,7 +10936,7 @@ void render_menu(void){//renders game menus
 		case 6:{					
 
 					kirjota(1,-1,-1,-1,430,112,50,"Change keys");
-					kirjota(0.7f,-1,-1,-1,430,127,22,"Keys are represented by numeric values. Don´t be alarmed.");
+					kirjota(0.7f,-1,-1,-1,430,127,22,"Keys are represented by numeric values. Don\B4t be alarmed.");
 					q=0;kirjota(1,(1-sqrtf(fabs((float)selected_key-(float)q))*(1.0f/sqrtf(8))),0.2f,0.2f,430,162+q*18,21,"Up");
 					q=1;kirjota(1,(1-sqrtf(fabs((float)selected_key-(float)q))*(1.0f/sqrtf(8))),0.2f,0.2f,430,162+q*18,21,"Down");
 					q=2;kirjota(1,(1-sqrtf(fabs((float)selected_key-(float)q))*(1.0f/sqrtf(8))),0.2f,0.2f,430,162+q*18,21,"Left");
@@ -11593,7 +11593,7 @@ void new_game(void){//starts a new game
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,4);
 		strcpy(planet[q].name,"Moon");
-		strcpy(planet[q].location,"Earth´s moon");
+		strcpy(planet[q].location,"Earth\B4s moon");
 	}
 
 	//marsin kuut
@@ -11620,7 +11620,7 @@ void new_game(void){//starts a new game
 		planet[q].population=randInt(2,6);
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(2,7);
-		strcpy(planet[q].location,"Mars´ moon");
+		strcpy(planet[q].location,"Mars\B4 moon");
 	}
 	q=10;strcpy(planet[q].name,"Phobos");
 	q=11;strcpy(planet[q].name,"Deimos");
@@ -11649,7 +11649,7 @@ void new_game(void){//starts a new game
 		planet[q].population=randInt(3,7);
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,8);		
-		strcpy(planet[q].location,"Jupiter´s moon");
+		strcpy(planet[q].location,"Jupiter\B4s moon");
 	}
 	q=12;strcpy(planet[q].name,"Metis");
 	q=13;strcpy(planet[q].name,"Adrastea");
@@ -11691,7 +11691,7 @@ void new_game(void){//starts a new game
 		planet[q].population=randInt(3,7);
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,8);
-		strcpy(planet[q].location,"Saturn´s moon");
+		strcpy(planet[q].location,"Saturn\B4s moon");
 	}
 	q=27;strcpy(planet[q].name,"Atlas");
 	q=28;strcpy(planet[q].name,"Prometheus");
@@ -11735,7 +11735,7 @@ void new_game(void){//starts a new game
 		planet[q].population=randInt(3,7);
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,8);
-		strcpy(planet[q].location,"Uranus´ moon");
+		strcpy(planet[q].location,"Uranus\B4 moon");
 	}
 	q=44;strcpy(planet[q].name,"Cordelia");
 	q=45;strcpy(planet[q].name,"Ophelia");
@@ -11777,7 +11777,7 @@ void new_game(void){//starts a new game
 		planet[q].population=randInt(3,7);
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,8);
-		strcpy(planet[q].location,"Neptune´s moon");
+		strcpy(planet[q].location,"Neptune\B4s moon");
 	}
 	q=59;strcpy(planet[q].name,"Naiad");
 	q=60;strcpy(planet[q].name,"Thalassa");
@@ -11813,10 +11813,10 @@ void new_game(void){//starts a new game
 		planet[q].military=randInt(1,3);
 		planet[q].wealth=randInt(3,8);
 		strcpy(planet[q].name,"Kharon");
-		strcpy(planet[q].location,"Pluto´s moon");
+		strcpy(planet[q].location,"Pluto\B4s moon");
 	}
 
-	//asteroidivyöhyke
+	//asteroidivy\F6hyke
 	for (q=69; q<89; q++){
 		planet[q].radiustohost=280+(float)(q-69)*2;
 		planet[q].rx=randDouble(0,180)/180*pi;
@@ -11846,7 +11846,7 @@ void new_game(void){//starts a new game
 		strcpy(planet[q].location,"in the asteroid field between Mars and Jupiter");
 	}
 
-	//asteroidivyöhykkeen murikat
+	//asteroidivy\F6hykkeen murikat
 	for (q=0; q<2000; q++){
 		rock[q].radiustohost=280+randDouble(-10,50);
 		rock[q].rx=randDouble(0,180)/180*pi;
@@ -11873,7 +11873,7 @@ void new_game(void){//starts a new game
 		strcat(rock[q].name,temprivi);
 	}
 
-	//satunnaiset murikat auringon ympärillä
+	//satunnaiset murikat auringon ymp\E4rill\E4
 	for (q=2000; q<maximumrocks; q++){
 		rock[q].rx=randDouble(0,180)/180*pi;
 		rock[q].ellipce=randDouble(0.8f,1.2f);
@@ -12063,10 +12063,10 @@ HRESULT GraphInit(void)
         return hr;
 
     // Create DirectShow Graph
-    if (FAILED (hr = CoCreateInstance(CLSID_FilterGraph, NULL,
-                                      CLSCTX_INPROC, IID_IGraphBuilder,
-                                      reinterpret_cast<void **>(&g_pGraphBuilder))) )
-        return hr;
+    //if (FAILED (hr = CoCreateInstance(CLSID_FilterGraph, NULL,
+    //                                  CLSCTX_INPROC, IID_IGraphBuilder,
+    //                                  reinterpret_cast<void **>(&g_pGraphBuilder))) )
+    //    return hr;
 
     // Get the IMediaControl Interface
     if (FAILED (hr = g_pGraphBuilder->QueryInterface(IID_IMediaControl,
@@ -12239,7 +12239,7 @@ void render_start_demo(void){
 		if(trans>1)trans=1;
 		xa=0;
 		if(start_timer>6000)xa=(sqr(start_timer-6000)*0.0008f);
-		kirjota(1,trans,trans,trans,504+xa,358,0,"Ville Mönkkönen presents:");
+		kirjota(1,trans,trans,trans,504+xa,358,0,"Ville M\F6nkk\F6nen presents:");
 
 
 

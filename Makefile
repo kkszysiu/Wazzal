@@ -20,7 +20,7 @@ INCLUDE_PATH          = $(MFC_INCLUDE_PATH)
 DLL_PATH              =
 DLL_IMPORTS           =
 LIBRARY_PATH          =
-LIBRARIES             =  -lodbc32 -lodbccp32 -lwinmm -ldsound -ldxerr9 -ld3d9 -d3dx9 -ldsound -ldinput -lxinput -ld3dim -ld3dxof -ld3dcompiler
+LIBRARIES             =  -lodbc32 -lole32 -lodbccp32 -lwinmm -ldxerr9 -ld3d9 -ld3dx9 -ldsound -ldinput -lxinput -ld3dim -ld3dxof -ld3dcompiler -lstrmiids
 
 
 ### stars.exe sources and settings
@@ -39,7 +39,15 @@ stars_exe_DLLS        = odbc32 \
 			ole32 \
 			oleaut32 \
 			winspool \
-			odbccp32
+			odbccp32 \
+			dxerr9 \
+			d3d9 \
+			d3dx9 \
+			dsound \
+			dinput \
+			xinput \
+			d3dim \
+			d3dxof 
 stars_exe_LIBRARY_PATH= $(MFC_LIBRARY_PATH)
 stars_exe_LIBRARIES   = uuid
 
